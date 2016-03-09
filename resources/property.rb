@@ -21,4 +21,4 @@ actions :set, :unset
 default_action :set
 
 attribute :name, kind_of: String, name_attribute: true
-attribute :value, kind_of: [Integer, String]
+attribute :value, kind_of: [TrueClass, FalseClass, Integer, String]

@@ -30,7 +30,7 @@ creds = chef_vault_item(node['pacemaker']['pcs']['vault'], node['pacemaker']['pc
 execute 'Setup authentication tokens for pcs command' do
   command "pcs cluster auth -u hacluster -p #{creds['password']} #{node['pacemaker']['corosync']['nodes'].keys.join(' ')}"
   sensitive true
-  creates '/var/lib/pcsd/pcs_user.conf'
+  creates '/var/lib/pcsd/pcs_users.conf'
   creates '/var/lib/pcsd/tokens'
 end
 
